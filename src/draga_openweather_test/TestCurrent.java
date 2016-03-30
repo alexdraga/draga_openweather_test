@@ -12,9 +12,13 @@ import static org.junit.Assert.*;
 
 
 public class TestCurrent {
-	URL url = new URL("http://openweathermap.org/current/");
+	URL url = new URL("http://api.openweathermap.org/data/2.5/weather");
 	HttpURLConnection connection = (HttpURLConnection)url.openConnection();
 	
+	protected void tearDown(){
+		connection.disconnect();
+	}
+	   
 	@Test
 	public void testResponseCode() throws MalformedURLException, IOException{
 		connection.setRequestMethod("GET");
