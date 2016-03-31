@@ -35,8 +35,8 @@ public class TestForecast {
         connection.connect();
         Integer code = connection.getResponseCode();
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
     }
 
     @Test
@@ -52,18 +52,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -80,18 +80,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -108,18 +108,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -136,18 +136,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -164,18 +164,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -192,18 +192,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -220,18 +220,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -246,13 +246,13 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -268,13 +268,13 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -290,13 +290,13 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -312,13 +312,13 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -336,18 +336,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -364,18 +364,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -392,18 +392,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -420,18 +420,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -446,13 +446,13 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -470,18 +470,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -498,18 +498,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -526,18 +526,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -554,18 +554,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
     @Test
     public void testForecastAPIKeyWrongLat() throws IOException, ParseException {
@@ -581,18 +581,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -609,18 +609,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -635,13 +635,13 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -659,18 +659,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -687,18 +687,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -715,18 +715,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -743,18 +743,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -769,13 +769,13 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -790,8 +790,8 @@ public class TestForecast {
         connection.connect();
         Integer code = connection.getResponseCode();
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
     }
 
     @Test
@@ -808,18 +808,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -836,18 +836,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -864,18 +864,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -892,18 +892,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -920,18 +920,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -948,18 +948,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -974,13 +974,13 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -996,13 +996,13 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -1018,13 +1018,13 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -1040,13 +1040,13 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -1064,18 +1064,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -1092,18 +1092,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -1120,18 +1120,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -1148,18 +1148,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -1174,13 +1174,13 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -1198,18 +1198,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -1226,18 +1226,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -1254,18 +1254,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -1282,18 +1282,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
     @Test
     public void testForecastAPIKeyWrongLatSlash() throws IOException, ParseException {
@@ -1309,18 +1309,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -1337,18 +1337,18 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -1363,13 +1363,13 @@ public class TestForecast {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 

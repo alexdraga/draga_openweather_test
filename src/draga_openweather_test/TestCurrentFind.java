@@ -35,8 +35,8 @@ public class TestCurrentFind {
         connection.connect();
         Integer code = connection.getResponseCode();
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
     }
 
     @Test
@@ -52,18 +52,18 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -80,18 +80,18 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -108,18 +108,18 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -136,18 +136,18 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
     @Test
     public void testCurrentFindAPIKeyNoLat() throws IOException, ParseException{
@@ -163,18 +163,18 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -191,18 +191,18 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -219,18 +219,18 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -247,18 +247,18 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -275,18 +275,18 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
         assertTrue("Actually, this is a bug, but I can not come with required behaviour, so let's leave it.", false);
     }
 
@@ -304,18 +304,18 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
         assertTrue("Actually, this is a bug, but I can not come with required behaviour, so let's leave it.", false);
     }
 
@@ -331,13 +331,13 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -353,13 +353,13 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -375,13 +375,13 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -397,13 +397,13 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -419,13 +419,13 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -441,13 +441,13 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -463,13 +463,13 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -485,13 +485,13 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -507,13 +507,13 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -529,13 +529,13 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -549,8 +549,8 @@ public class TestCurrentFind {
         connection.connect();
         Integer code = connection.getResponseCode();
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         // TODO: write JSON validation
     }
 
@@ -565,8 +565,8 @@ public class TestCurrentFind {
         connection.connect();
         Integer code = connection.getResponseCode();
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
     }
 
     @Test
@@ -583,18 +583,18 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -611,18 +611,18 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -639,18 +639,18 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
     @Test
     public void testCurrentFindAPIKeyNoLatSlash() throws IOException, ParseException{
@@ -666,18 +666,18 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -694,18 +694,18 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -722,18 +722,18 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -750,18 +750,18 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
     }
 
     @Test
@@ -778,18 +778,18 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
         assertTrue("Actually, this is a bug, but I can not come with required behaviour, so let's leave it.", false);
     }
 
@@ -807,18 +807,18 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertTrue("No message field is present",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         assertEquals("Wrong message in the JSON received.",
-                ((JSONObject) responseBody).get("message"),
-                expectedMessage);
+                expectedMessage,
+                ((JSONObject) responseBody).get("message"));
         assertTrue("Actually, this is a bug, but I can not come with required behaviour, so let's leave it.", false);
     }
 
@@ -834,13 +834,13 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -856,13 +856,13 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -878,13 +878,13 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -900,13 +900,13 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -922,13 +922,13 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -944,13 +944,13 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -966,13 +966,13 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -988,13 +988,13 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -1010,13 +1010,13 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -1032,13 +1032,13 @@ public class TestCurrentFind {
         Integer code = connection.getResponseCode();
         Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         assertTrue("No cod field is present",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
+                String.valueOf(expectedCod),
+                String.valueOf(((JSONObject) responseBody).get("cod")));
         // TODO: write JSON validation
     }
 
@@ -1052,8 +1052,8 @@ public class TestCurrentFind {
         connection.connect();
         Integer code = connection.getResponseCode();
         assertEquals("Wrong response code received",
-                code,
-                expectedCode);
+                expectedCode,
+                code);
         // TODO: write JSON validation
     }
 
