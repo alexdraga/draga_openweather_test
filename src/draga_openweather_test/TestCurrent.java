@@ -10,6 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import org.json.simple.JSONObject;
+import org.junit.After;
 import org.junit.Test;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -17,18 +18,19 @@ import org.json.simple.parser.ParseException;
 
 public class TestCurrent {
     private String API_KEY = "8cddc759f83ccdcc0168d33767240c55";
-    private URL url = new URL("http://api.openweathermap.org/data/2.5/weather");
+    private String API_URL = "http://api.openweathermap.org/data/2.5/weather";
     private HttpURLConnection connection;
     private JSONParser parser = new JSONParser();
-	
-	protected void tearDown(){
+
+    @After
+	public void tearDown(){
 		connection.disconnect();
 	}
 
 	private String getResponseBody(HttpURLConnection con) throws IOException {
 		int code = con.getResponseCode();
 		BufferedReader br;
-		if (code > 200 && code < 300) {
+		if (code >= 200 && code < 300) {
 			br = new BufferedReader(new InputStreamReader((con.getInputStream())));
 		} else {
 			br = new BufferedReader(new InputStreamReader((con.getErrorStream())));
@@ -43,13 +45,15 @@ public class TestCurrent {
 	   
 	@Test
 	public void testNoAPIKey() throws IOException, ParseException{
+        Integer expectedCode = 401;
+        Integer expectedCod = 401;
+        String expectedMessage =
+                "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.";
+        URL url = new URL(API_URL);
         connection = (HttpURLConnection)url.openConnection();
 		connection.setRequestMethod("GET");
 		connection.connect();
         Integer code = connection.getResponseCode();
-		Integer expectedCode = 401;
-		String expectedMessage =
-                "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.";
         Object responseBody = parser.parse(getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
@@ -60,7 +64,34 @@ public class TestCurrent {
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
                 String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCode));
+                String.valueOf(expectedCod));
+        assertEquals("Wrong message in the JSON received.",
+                ((JSONObject) responseBody).get("message"),
+                expectedMessage);
+	}
+
+    @Test
+	public void testAPIKeyNoParams() throws IOException, ParseException{
+        Integer expectedCode = 200;
+        Integer expectedCod = 404;
+        String expectedMessage =
+                "Error: Not found city";
+        URL url = new URL(API_URL + "/?appid=" + API_KEY);
+        connection = (HttpURLConnection)url.openConnection();
+		connection.setRequestMethod("GET");
+		connection.connect();
+        Integer code = connection.getResponseCode();
+        Object responseBody = parser.parse(getResponseBody(connection));
+        assertEquals("Wrong response code received",
+                code,
+                expectedCode);
+        assertTrue("No cod field is present",
+                ((JSONObject) responseBody).containsKey("cod"));
+        assertTrue("No message field is present",
+                ((JSONObject) responseBody).containsKey("message"));
+        assertEquals("Wrong code in the JSON received.",
+                String.valueOf(((JSONObject) responseBody).get("cod")),
+                String.valueOf(expectedCod));
         assertEquals("Wrong message in the JSON received.",
                 ((JSONObject) responseBody).get("message"),
                 expectedMessage);
