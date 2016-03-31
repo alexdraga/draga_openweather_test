@@ -3,9 +3,7 @@ package draga_openweather_test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -16,8 +14,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 
-public class TestWeather {
-    private String API_KEY = "8cddc759f83ccdcc0168d33767240c55";
+public class TestCurrentWeather {
     private String API_URL = "http://api.openweathermap.org/data/2.5/weather";
     private HttpURLConnection connection;
     private JSONParser parser = new JSONParser();
@@ -25,22 +22,6 @@ public class TestWeather {
     @After
 	public void tearDown(){
 		connection.disconnect();
-	}
-
-    private String getResponseBody(HttpURLConnection con) throws IOException {
-		int code = con.getResponseCode();
-		BufferedReader br;
-		if (code >= 200 && code < 300) {
-			br = new BufferedReader(new InputStreamReader((con.getInputStream())));
-		} else {
-			br = new BufferedReader(new InputStreamReader((con.getErrorStream())));
-		}
-		StringBuilder sb = new StringBuilder();
-		String output;
-		while ((output = br.readLine()) != null) {
-		sb.append(output);
-		}
-		return sb.toString();
 	}
 
     @Test
@@ -69,7 +50,7 @@ public class TestWeather {
 		connection.setRequestMethod("GET");
 		connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -97,7 +78,7 @@ public class TestWeather {
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -125,7 +106,7 @@ public class TestWeather {
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -147,13 +128,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "?appid=" + API_KEY;
+        String params = "?appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
 		connection.setRequestMethod("GET");
 		connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -175,13 +156,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "?q=&appid=" + API_KEY;
+        String params = "?q=&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -203,13 +184,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "?q=JJJJJJJJJJJJ&appid=" + API_KEY;
+        String params = "?q=JJJJJJJJJJJJ&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -237,7 +218,7 @@ public class TestWeather {
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -257,13 +238,13 @@ public class TestWeather {
     public void testWeatherAPIKeyCity() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
-        String params = "?q=London&appid=" + API_KEY;
+        String params = "?q=London&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -279,13 +260,13 @@ public class TestWeather {
     public void testWeatherAPIKeyCityUnknownLang() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
-        String params = "?q=London,kkkk&appid=" + API_KEY;
+        String params = "?q=London,kkkk&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -301,13 +282,13 @@ public class TestWeather {
     public void testWeatherAPIKeyEmptyCityLang() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
-        String params = "?q=London,&appid=" + API_KEY;
+        String params = "?q=London,&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -323,13 +304,13 @@ public class TestWeather {
     public void testWeatherAPIKeyCityLang() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
-        String params = "?q=London,uk&appid=" + API_KEY;
+        String params = "?q=London,uk&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -347,13 +328,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "?id=0&appid=" + API_KEY;
+        String params = "?id=0&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -375,13 +356,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "?id=&appid=" + API_KEY;
+        String params = "?id=&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -403,13 +384,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "?id=aaaaa&appid=" + API_KEY;
+        String params = "?id=aaaaa&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -437,7 +418,7 @@ public class TestWeather {
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -457,13 +438,13 @@ public class TestWeather {
     public void testWeatherAPIKeyCityID() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
-        String params = "?id=2172797&appid=" + API_KEY;
+        String params = "?id=2172797&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -481,13 +462,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "?lon=&lat=&appid=" + API_KEY;
+        String params = "?lon=&lat=&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -509,13 +490,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "?lon=139&appid=" + API_KEY;
+        String params = "?lon=139&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -537,13 +518,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "?lat=35&appid=" + API_KEY;
+        String params = "?lat=35&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -565,13 +546,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "?lon=aaaa&appid=" + API_KEY;
+        String params = "?lon=aaaa&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -592,13 +573,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "?lat=aaaa&appid=" + API_KEY;
+        String params = "?lat=aaaa&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -626,7 +607,7 @@ public class TestWeather {
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -646,13 +627,13 @@ public class TestWeather {
     public void testWeatherAPIKeyCoordinates() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
-        String params = "?lon=139&lat=35&appid=" + API_KEY;
+        String params = "?lon=139&lat=35&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -670,13 +651,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "?zip=0&appid=" + API_KEY;
+        String params = "?zip=0&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -698,13 +679,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "?zip=&appid=" + API_KEY;
+        String params = "?zip=&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -726,13 +707,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "?zip=aaaaa&appid=" + API_KEY;
+        String params = "?zip=aaaaa&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -760,7 +741,7 @@ public class TestWeather {
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -780,13 +761,13 @@ public class TestWeather {
     public void testWeatherAPIKeyZIPCode() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
-        String params = "?zip=94040,us&appid=" + API_KEY;
+        String params = "?zip=94040,us&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -825,7 +806,7 @@ public class TestWeather {
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -853,7 +834,7 @@ public class TestWeather {
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -875,13 +856,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "/?appid=" + API_KEY;
+        String params = "/?appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -903,13 +884,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "/?q=&appid=" + API_KEY;
+        String params = "/?q=&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -931,13 +912,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "/?q=JJJJJJJJJJJJ&appid=" + API_KEY;
+        String params = "/?q=JJJJJJJJJJJJ&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -965,7 +946,7 @@ public class TestWeather {
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -985,13 +966,13 @@ public class TestWeather {
     public void testWeatherAPIKeyCitySlash() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
-        String params = "/?q=London&appid=" + API_KEY;
+        String params = "/?q=London&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -1007,13 +988,13 @@ public class TestWeather {
     public void testWeatherAPIKeyCityUnknownLangSlash() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
-        String params = "/?q=London,kkkk&appid=" + API_KEY;
+        String params = "/?q=London,kkkk&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -1029,13 +1010,13 @@ public class TestWeather {
     public void testWeatherAPIKeyEmptyCityLangSlash() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
-        String params = "/?q=London,&appid=" + API_KEY;
+        String params = "/?q=London,&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -1051,13 +1032,13 @@ public class TestWeather {
     public void testWeatherAPIKeyCityLangSlash() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
-        String params = "/?q=London,uk&appid=" + API_KEY;
+        String params = "/?q=London,uk&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -1075,13 +1056,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "/?id=0&appid=" + API_KEY;
+        String params = "/?id=0&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -1103,13 +1084,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "/?id=&appid=" + API_KEY;
+        String params = "/?id=&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -1131,13 +1112,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "/?id=aaaaa&appid=" + API_KEY;
+        String params = "/?id=aaaaa&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -1165,7 +1146,7 @@ public class TestWeather {
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -1185,13 +1166,13 @@ public class TestWeather {
     public void testWeatherAPIKeyCityIDSlash() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
-        String params = "/?id=2172797&appid=" + API_KEY;
+        String params = "/?id=2172797&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -1209,13 +1190,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "/?lon=&lat=&appid=" + API_KEY;
+        String params = "/?lon=&lat=&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -1237,13 +1218,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "/?lon=139&appid=" + API_KEY;
+        String params = "/?lon=139&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -1265,13 +1246,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "/?lat=35&appid=" + API_KEY;
+        String params = "/?lat=35&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -1293,13 +1274,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "/?lon=aaaa&appid=" + API_KEY;
+        String params = "/?lon=aaaa&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -1320,13 +1301,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "/?lat=aaaa&appid=" + API_KEY;
+        String params = "/?lat=aaaa&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -1354,7 +1335,7 @@ public class TestWeather {
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -1374,13 +1355,13 @@ public class TestWeather {
     public void testWeatherAPIKeyCoordinatesSlash() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
-        String params = "/?lon=139&lat=35&appid=" + API_KEY;
+        String params = "/?lon=139&lat=35&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -1398,13 +1379,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "/?zip=0&appid=" + API_KEY;
+        String params = "/?zip=0&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -1426,13 +1407,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "/?zip=&appid=" + API_KEY;
+        String params = "/?zip=&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -1454,13 +1435,13 @@ public class TestWeather {
         Integer expectedCod = 404;
         String expectedMessage =
                 "Error: Not found city";
-        String params = "/?zip=aaaaa&appid=" + API_KEY;
+        String params = "/?zip=aaaaa&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -1488,7 +1469,7 @@ public class TestWeather {
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -1508,13 +1489,13 @@ public class TestWeather {
     public void testWeatherAPIKeyZIPCodeSlash() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
-        String params = "/?zip=94040,us&appid=" + API_KEY;
+        String params = "/?zip=94040,us&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
         Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(getResponseBody(connection));
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
         assertEquals("Wrong response code received",
                 code,
                 expectedCode);
@@ -1526,5 +1507,5 @@ public class TestWeather {
         // TODO: write JSON validation
     }
 
-	public TestWeather() throws IOException{}
+	public TestCurrentWeather() throws IOException{}
 }
