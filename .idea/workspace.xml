@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7208d7f0-b98e-4e3f-9356-01c40742dbb8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1_1.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/draga_openweather_test/Helpers.java" afterPath="$PROJECT_DIR$/src/draga_openweather_test/Helpers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/draga_openweather_test/TestCurrentBox.java" afterPath="$PROJECT_DIR$/src/draga_openweather_test/TestCurrentBox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/draga_openweather_test/TestCurrentFind.java" afterPath="$PROJECT_DIR$/src/draga_openweather_test/TestCurrentFind.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/draga_openweather_test/TestCurrentGroup.java" afterPath="$PROJECT_DIR$/src/draga_openweather_test/TestCurrentGroup.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/draga_openweather_test/TestCurrentWeather.java" afterPath="$PROJECT_DIR$/src/draga_openweather_test/TestCurrentWeather.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/draga_openweather_test/TestForecast.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="draga_openweather_test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,7 +47,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestCurrentGroup.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestCurrentGroup.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/draga_openweather_test/TestCurrentGroup.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
@@ -62,11 +57,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestCurrentWeather.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TestForecast.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/draga_openweather_test/TestForecast.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="71">
+              <caret line="881" column="48" selection-start-line="881" selection-start-column="28" selection-end-line="881" selection-end-column="48" />
+              <folding>
+                <element signature="e#575#576#0" expanded="true" />
+                <element signature="e#614#615#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestCurrentWeather.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/draga_openweather_test/TestCurrentWeather.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+            <state relative-caret-position="113">
+              <caret line="881" column="34" selection-start-line="881" selection-start-column="34" selection-end-line="881" selection-end-column="34" />
               <folding>
                 <element signature="e#577#578#0" expanded="true" />
                 <element signature="e#607#608#0" expanded="true" />
@@ -75,17 +83,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Helpers.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/draga_openweather_test/Helpers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="9" column="70" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -103,6 +108,7 @@
         <option value="$PROJECT_DIR$/src/draga_openweather_test/TestCurrentBox.java" />
         <option value="$PROJECT_DIR$/src/draga_openweather_test/TestCurrentFind.java" />
         <option value="$PROJECT_DIR$/src/draga_openweather_test/TestCurrentGroup.java" />
+        <option value="$PROJECT_DIR$/src/draga_openweather_test/TestForecast.java" />
       </list>
     </option>
   </component>
@@ -194,33 +200,7 @@
       <pane id="Scratches" />
     </panes>
   </component>
-  <component name="RunManager" selected="JUnit.draga_openweather_test in draga_openweather_test">
-    <configuration default="false" name="TestCurrentBox" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="draga_openweather_test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="draga_openweather_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="draga_openweather_test" />
-      <option name="MAIN_CLASS_NAME" value="draga_openweather_test.TestCurrentBox" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.TestCurrentWeather.testCurrentWeatherAPIKeyEmptyCitySlash">
     <configuration default="false" name="draga_openweather_test in draga_openweather_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -235,6 +215,110 @@
       <option name="MAIN_CLASS_NAME" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestForecast" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="draga_openweather_test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="draga_openweather_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="draga_openweather_test" />
+      <option name="MAIN_CLASS_NAME" value="draga_openweather_test.TestForecast" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestForecast.testForecastAPIKeyEmptyCitySlash" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="draga_openweather_test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="draga_openweather_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="draga_openweather_test" />
+      <option name="MAIN_CLASS_NAME" value="draga_openweather_test.TestForecast" />
+      <option name="METHOD_NAME" value="testForecastAPIKeyEmptyCitySlash" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestCurrentWeather.testCurrentWeatherAPIKeyEmptyCoordinatesSlash" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="draga_openweather_test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="draga_openweather_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="draga_openweather_test" />
+      <option name="MAIN_CLASS_NAME" value="draga_openweather_test.TestCurrentWeather" />
+      <option name="METHOD_NAME" value="testCurrentWeatherAPIKeyEmptyCoordinatesSlash" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="TestCurrentWeather.testCurrentWeatherAPIKeyEmptyCitySlash" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="draga_openweather_test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="draga_openweather_test" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="draga_openweather_test" />
+      <option name="MAIN_CLASS_NAME" value="draga_openweather_test.TestCurrentWeather" />
+      <option name="METHOD_NAME" value="testCurrentWeatherAPIKeyEmptyCitySlash" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -481,14 +565,20 @@
       <listeners />
       <method />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.TestCurrentBox" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.draga_openweather_test in draga_openweather_test" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.draga_openweather_test in draga_openweather_test" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.TestForecast" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.TestForecast.testForecastAPIKeyEmptyCitySlash" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.TestCurrentWeather.testCurrentWeatherAPIKeyEmptyCoordinatesSlash" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.TestCurrentWeather.testCurrentWeatherAPIKeyEmptyCitySlash" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.draga_openweather_test in draga_openweather_test" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.TestCurrentBox" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.TestCurrentWeather.testCurrentWeatherAPIKeyEmptyCitySlash" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.TestForecast" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.TestCurrentWeather.testCurrentWeatherAPIKeyEmptyCoordinatesSlash" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TestForecast.testForecastAPIKeyEmptyCitySlash" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.draga_openweather_test in draga_openweather_test" />
       </list>
     </recent_temporary>
   </component>
@@ -506,22 +596,40 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestCurrentBox - 2016.03.31 at 22h 17m 11s.xml">
-      <configuration name="TestCurrentBox" configurationId="JUnit" />
+    <history-entry file="TestCurrentWeather_testCurrentWeatherAPIKeyEmptyCitySlash - 2016.03.31 at 22h 33m 43s.xml">
+      <configuration name="TestCurrentWeather.testCurrentWeatherAPIKeyEmptyCitySlash" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="draga_openweather_test_in_draga_openweather_test - 2016.03.31 at 22h 21m 41s.xml">
-      <configuration name="draga_openweather_test in draga_openweather_test" configurationId="JUnit" />
+    <history-entry file="TestCurrentWeather_testCurrentWeatherAPIKeyEmptyCoordinatesSlash - 2016.03.31 at 22h 28m 52s.xml">
+      <configuration name="TestCurrentWeather.testCurrentWeatherAPIKeyEmptyCoordinatesSlash" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="draga_openweather_test_in_draga_openweather_test - 2016.03.31 at 22h 21m 49s.xml">
-      <configuration name="draga_openweather_test in draga_openweather_test" configurationId="JUnit" />
+    <history-entry file="TestCurrentWeather_testCurrentWeatherAPIKeyEmptyCoordinatesSlash - 2016.03.31 at 22h 28m 57s.xml">
+      <configuration name="TestCurrentWeather.testCurrentWeatherAPIKeyEmptyCoordinatesSlash" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="draga_openweather_test_in_draga_openweather_test - 2016.03.31 at 22h 22m 13s.xml">
-      <configuration name="draga_openweather_test in draga_openweather_test" configurationId="JUnit" />
+    <history-entry file="TestCurrentWeather_testCurrentWeatherAPIKeyEmptyCoordinatesSlash - 2016.03.31 at 22h 29m 15s.xml">
+      <configuration name="TestCurrentWeather.testCurrentWeatherAPIKeyEmptyCoordinatesSlash" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestCurrentWeather_testCurrentWeatherAPIKeyEmptyCoordinatesSlash - 2016.03.31 at 22h 29m 28s.xml">
+      <configuration name="TestCurrentWeather.testCurrentWeatherAPIKeyEmptyCoordinatesSlash" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestForecast - 2016.03.31 at 22h 26m 07s.xml">
+      <configuration name="TestForecast" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestForecast - 2016.03.31 at 22h 28m 02s.xml">
+      <configuration name="TestForecast" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestForecast - 2016.03.31 at 22h 33m 20s.xml">
+      <configuration name="TestForecast" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestForecast_testForecastAPIKeyEmptyCitySlash - 2016.03.31 at 22h 26m 41s.xml">
+      <configuration name="TestForecast.testForecastAPIKeyEmptyCitySlash" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestForecast_testForecastAPIKeyEmptyCitySlash - 2016.03.31 at 22h 27m 52s.xml">
+      <configuration name="TestForecast.testForecastAPIKeyEmptyCitySlash" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="748" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -531,7 +639,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297546" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297546" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -540,7 +648,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.398773" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -553,7 +661,17 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/draga_openweather_test/TestCurrentWeather.java</url>
+          <line>1199</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="4" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -587,22 +705,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/draga_openweather_test/TestCurrentWeather.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
-          <folding>
-            <element signature="e#577#578#0" expanded="true" />
-            <element signature="e#607#608#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/draga_openweather_test/TestCurrentGroup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="499" column="0" selection-start-line="499" selection-start-column="0" selection-end-line="499" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/draga_openweather_test/TestForecast.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="881" column="48" selection-start-line="881" selection-start-column="28" selection-end-line="881" selection-end-column="48" />
+          <folding>
+            <element signature="e#575#576#0" expanded="true" />
+            <element signature="e#614#615#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/draga_openweather_test/TestCurrentWeather.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="881" column="34" selection-start-line="881" selection-start-column="34" selection-end-line="881" selection-end-column="34" />
+          <folding>
+            <element signature="e#577#578#0" expanded="true" />
+            <element signature="e#607#608#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
