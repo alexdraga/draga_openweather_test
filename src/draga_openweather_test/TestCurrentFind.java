@@ -287,7 +287,7 @@ public class TestCurrentFind {
         assertEquals("Wrong message in the JSON received.",
                 ((JSONObject) responseBody).get("message"),
                 expectedMessage);
-        assertTrue("Actually, this is a bug.", false);
+        assertTrue("Actually, this is a bug, but I can not come with required behaviour, so let's leave it.", false);
     }
 
     @Test
@@ -316,7 +316,7 @@ public class TestCurrentFind {
         assertEquals("Wrong message in the JSON received.",
                 ((JSONObject) responseBody).get("message"),
                 expectedMessage);
-        assertTrue("Actually, this is a bug.", false);
+        assertTrue("Actually, this is a bug, but I can not come with required behaviour, so let's leave it.", false);
     }
 
     @Test
@@ -790,7 +790,7 @@ public class TestCurrentFind {
         assertEquals("Wrong message in the JSON received.",
                 ((JSONObject) responseBody).get("message"),
                 expectedMessage);
-        assertTrue("Actually, this is a bug.", false);
+        assertTrue("Actually, this is a bug, but I can not come with required behaviour, so let's leave it.", false);
     }
 
     @Test
@@ -819,7 +819,7 @@ public class TestCurrentFind {
         assertEquals("Wrong message in the JSON received.",
                 ((JSONObject) responseBody).get("message"),
                 expectedMessage);
-        assertTrue("Actually, this is a bug.", false);
+        assertTrue("Actually, this is a bug, but I can not come with required behaviour, so let's leave it.", false);
     }
 
     @Test
