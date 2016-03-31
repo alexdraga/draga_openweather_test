@@ -1,28 +1,31 @@
 package draga_openweather_test;
 
-import java.net.URL;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
+import org.json.simple.JSONObject;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 
 public class TestCurrent {
 	String API_KEY = "8cddc759f83ccdcc0168d33767240c55";
 	URL url = new URL("http://api.openweathermap.org/data/2.5/weather");
 	HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+	JSONParser parser = new JSONParser();
 	
 	protected void tearDown(){
 		connection.disconnect();
 	}
-	
-	public String getResponseBody(HttpURLConnection con) throws IOException {
+
+	private String getResponseBody(HttpURLConnection con) throws IOException {
 		int code = connection.getResponseCode();
 		BufferedReader br;
 		if (code > 200 && code < 300) {
@@ -39,22 +42,29 @@ public class TestCurrent {
 	}
 	   
 	@Test
-	public void testNoAPIKey() throws MalformedURLException, IOException{
+	public void testNoAPIKey() throws IOException, ParseException{
 		connection.setRequestMethod("GET");
 		connection.connect();
-		int code = connection.getResponseCode();
-		String response = getResponseBody(connection);
-		int expectedCode = 401;
-		String expectedMessage = "";
-		assertEquals(String.format(
-				"Wrong response code received for %1$s. "
-				+ "Expected: %2$s. "
-				+ "Received: %3$s", 
-				url, expectedCode, code),
-				code,
-				expectedCode);
+        Integer code = connection.getResponseCode();
+		Integer expectedCode = 401;
+		String expectedMessage =
+                "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.";
+        Object responseBody = parser.parse(getResponseBody(connection));
+        assertEquals("Wrong response code received",
+                code,
+                expectedCode);
+        assertTrue("No cod field is present",
+                ((JSONObject) responseBody).containsKey("cod"));
+        assertTrue("No message field is present",
+                ((JSONObject) responseBody).containsKey("message"));
+        assertEquals("Wrong code in the JSON received.",
+                String.valueOf(((JSONObject) responseBody).get("cod")),
+                String.valueOf(expectedCode));
+        assertEquals("Wrong message in the JSON received.",
+                ((JSONObject) responseBody).get("message"),
+                expectedMessage);
 	}
 
 	
-	public TestCurrent() throws MalformedURLException, IOException{}
+	public TestCurrent() throws IOException{}
 }
