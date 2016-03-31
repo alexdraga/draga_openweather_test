@@ -14,8 +14,8 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 
-public class TestCurrentBox {
-    private String API_URL = "http://api.openweathermap.org/data/2.5/box/city";
+public class TestCurrentFind {
+    private String API_URL = "http://api.openweathermap.org/data/2.5/find";
     private HttpURLConnection connection;
     private JSONParser parser = new JSONParser();
 
@@ -25,7 +25,7 @@ public class TestCurrentBox {
     }
 
     @Test
-    public void testCurrentBoxTooLongRequest() throws IOException, ParseException{
+    public void testCurrentFindTooLongRequest() throws IOException, ParseException{
         Integer expectedCode = 414;
         String app_id = new String(new char[9000]).replace("\0", "a");
         String params = "?appid=" + app_id;
@@ -40,7 +40,7 @@ public class TestCurrentBox {
     }
 
     @Test
-    public void testCurrentBoxNoAPIKey() throws IOException, ParseException{
+    public void testCurrentFindNoAPIKey() throws IOException, ParseException{
         Integer expectedCode = 401;
         Integer expectedCod = 401;
         String expectedMessage =
@@ -67,7 +67,7 @@ public class TestCurrentBox {
     }
 
     @Test
-    public void testCurrentBoxUnknownKey() throws IOException, ParseException{
+    public void testCurrentFindUnknownKey() throws IOException, ParseException{
         Integer expectedCode = 401;
         Integer expectedCod = 401;
         String expectedMessage =
@@ -95,7 +95,7 @@ public class TestCurrentBox {
     }
 
     @Test
-    public void testCurrentBoxEmptyAPIKey() throws IOException, ParseException{
+    public void testCurrentFindEmptyAPIKey() throws IOException, ParseException{
         Integer expectedCode = 401;
         Integer expectedCod = 401;
         String expectedMessage =
@@ -123,7 +123,7 @@ public class TestCurrentBox {
     }
 
     @Test
-    public void testCurrentBoxAPIKeyWithoutParams() throws IOException, ParseException{
+    public void testCurrentFindAPIKeyWithoutParams() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 500;
         String expectedMessage =
@@ -149,14 +149,13 @@ public class TestCurrentBox {
                 ((JSONObject) responseBody).get("message"),
                 expectedMessage);
     }
-
     @Test
-    public void testCurrentBoxAPIKeyEmptyBBox() throws IOException, ParseException{
+    public void testCurrentFindAPIKeyNoLat() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 500;
         String expectedMessage =
-                "Bad bbox";
-        String params = "?bbox=&appid=" + Helpers.API_KEY;
+                "bad request";
+        String params = "?lon=37&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
@@ -179,12 +178,12 @@ public class TestCurrentBox {
     }
 
     @Test
-    public void testCurrentBoxAPIKeyShortBBox() throws IOException, ParseException{
+    public void testCurrentFindAPIKeyEmptyLat() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 500;
         String expectedMessage =
-                "Bad bbox";
-        String params = "?bbox=12,32&appid=" + Helpers.API_KEY;
+                "bad request";
+        String params = "?lat=&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
@@ -207,12 +206,12 @@ public class TestCurrentBox {
     }
 
     @Test
-    public void testCurrentBoxAPIKeyWrongBBox() throws IOException, ParseException{
+    public void testCurrentFindAPIKeyEmptyNoLon() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 500;
         String expectedMessage =
-                "Bad bbox";
-        String params = "?bbox=AAAAAAAA&appid=" + Helpers.API_KEY;
+                "bad request";
+        String params = "?lat=55&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
@@ -235,100 +234,12 @@ public class TestCurrentBox {
     }
 
     @Test
-    public void testCurrentBoxAPIKeyBBox() throws IOException, ParseException{
-        Integer expectedCode = 200;
-        Integer expectedCod = 200;
-        String params = "?bbox=12,32,15,37&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
-        connection = (HttpURLConnection)url.openConnection();
-        connection.setRequestMethod("GET");
-        connection.connect();
-        Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
-        assertEquals("Wrong response code received",
-                code,
-                expectedCode);
-        assertTrue("No cod field is present",
-                ((JSONObject) responseBody).containsKey("cod"));
-        assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
-        // TODO: write JSON validation
-    }
-
-    @Test
-    public void testCurrentBoxAPIKeyBBoxWrongCluster() throws IOException, ParseException{
-        Integer expectedCode = 200;
-        Integer expectedCod = 200;
-        String params = "?bbox=12,32,15,37&cluster=YYYY&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
-        connection = (HttpURLConnection)url.openConnection();
-        connection.setRequestMethod("GET");
-        connection.connect();
-        Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
-        assertEquals("Wrong response code received",
-                code,
-                expectedCode);
-        assertTrue("No cod field is present",
-                ((JSONObject) responseBody).containsKey("cod"));
-        assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
-        // TODO: write JSON validation
-    }
-
-    @Test
-    public void testCurrentBoxAPIKeyBBoxEmptyCluster() throws IOException, ParseException{
-        Integer expectedCode = 200;
-        Integer expectedCod = 200;
-        String params = "?bbox=12,32,15,37&cluster=&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
-        connection = (HttpURLConnection)url.openConnection();
-        connection.setRequestMethod("GET");
-        connection.connect();
-        Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
-        assertEquals("Wrong response code received",
-                code,
-                expectedCode);
-        assertTrue("No cod field is present",
-                ((JSONObject) responseBody).containsKey("cod"));
-        assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
-        // TODO: write JSON validation
-    }
-
-    @Test
-    public void testCurrentBoxAPIKeyBBoxCluster() throws IOException, ParseException{
-        Integer expectedCode = 200;
-        Integer expectedCod = 200;
-        String params = "?bbox=12,32,15,37&cluster=yes&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
-        connection = (HttpURLConnection)url.openConnection();
-        connection.setRequestMethod("GET");
-        connection.connect();
-        Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
-        assertEquals("Wrong response code received",
-                code,
-                expectedCode);
-        assertTrue("No cod field is present",
-                ((JSONObject) responseBody).containsKey("cod"));
-        assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
-        // TODO: write JSON validation
-    }
-
-    @Test
-    public void testCurrentBoxAPIKeyNoBBoxCluster() throws IOException, ParseException{
+    public void testCurrentFindAPIKeyEmptyLon() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 500;
         String expectedMessage =
-                "";
-        String params = "?cluster=yes&appid=" + Helpers.API_KEY;
+                "bad request";
+        String params = "?lon=&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
@@ -351,10 +262,68 @@ public class TestCurrentBox {
     }
 
     @Test
-    public void testCurrentBoxAPIKeyBBoxWrongLang() throws IOException, ParseException{
+    public void testCurrentFindAPIKeyWrongLat() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
-        String params = "?bbox=12,32,15,37&lang=yEEEEEEEes&appid=" + Helpers.API_KEY;
+        String expectedMessage =
+                "accurate";
+        String params = "?lat=AAA&lon=37&appid=" + Helpers.API_KEY;
+        URL url = new URL(API_URL + params);
+        connection = (HttpURLConnection)url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.connect();
+        Integer code = connection.getResponseCode();
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
+        assertEquals("Wrong response code received",
+                code,
+                expectedCode);
+        assertTrue("No cod field is present",
+                ((JSONObject) responseBody).containsKey("cod"));
+        assertTrue("No message field is present",
+                ((JSONObject) responseBody).containsKey("message"));
+        assertEquals("Wrong code in the JSON received.",
+                String.valueOf(((JSONObject) responseBody).get("cod")),
+                String.valueOf(expectedCod));
+        assertEquals("Wrong message in the JSON received.",
+                ((JSONObject) responseBody).get("message"),
+                expectedMessage);
+        assertTrue("Actually, this is a bug.", false);
+    }
+
+    @Test
+    public void testCurrentFindAPIKeyWrongLon() throws IOException, ParseException{
+        Integer expectedCode = 200;
+        Integer expectedCod = 200;
+        String expectedMessage =
+                "accurate";
+        String params = "?lat=55&lon=AAAAA&appid=" + Helpers.API_KEY;
+        URL url = new URL(API_URL + params);
+        connection = (HttpURLConnection)url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.connect();
+        Integer code = connection.getResponseCode();
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
+        assertEquals("Wrong response code received",
+                code,
+                expectedCode);
+        assertTrue("No cod field is present",
+                ((JSONObject) responseBody).containsKey("cod"));
+        assertTrue("No message field is present",
+                ((JSONObject) responseBody).containsKey("message"));
+        assertEquals("Wrong code in the JSON received.",
+                String.valueOf(((JSONObject) responseBody).get("cod")),
+                String.valueOf(expectedCod));
+        assertEquals("Wrong message in the JSON received.",
+                ((JSONObject) responseBody).get("message"),
+                expectedMessage);
+        assertTrue("Actually, this is a bug.", false);
+    }
+
+    @Test
+    public void testCurrentFindAPIKeyCoordinates() throws IOException, ParseException{
+        Integer expectedCode = 200;
+        Integer expectedCod = 200;
+        String params = "?lat=55&lon=37&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
@@ -373,31 +342,10 @@ public class TestCurrentBox {
     }
 
     @Test
-    public void testCurrentBoxAPIKeyBBoxEmptyLang() throws IOException, ParseException{
+    public void testCurrentFindAPIKeyCoordinatesWrongLang() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
-        String params = "?bbox=12,32,15,37&lang=&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
-        connection = (HttpURLConnection)url.openConnection();
-        connection.setRequestMethod("GET");
-        connection.connect();
-        Integer code = connection.getResponseCode();
-        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
-        assertEquals("Wrong response code received",
-                code,
-                expectedCode);
-        assertTrue("No cod field is present",
-                ((JSONObject) responseBody).containsKey("cod"));
-        assertEquals("Wrong code in the JSON received.",
-                String.valueOf(((JSONObject) responseBody).get("cod")),
-                String.valueOf(expectedCod));
-        // TODO: write JSON validation
-    }
-    @Test
-    public void testCurrentBoxAPIKeyBBoxLang() throws IOException, ParseException{
-        Integer expectedCode = 200;
-        Integer expectedCod = 200;
-        String params = "?bbox=12,32,15,37&lang=en&appid=" + Helpers.API_KEY;
+        String params = "?lat=55&lon=37&lang=yEEEEEEEes&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
@@ -416,9 +364,185 @@ public class TestCurrentBox {
     }
 
     @Test
-    public void testCurrentBoxAPIKeyBBoxWrongCallback() throws IOException, ParseException{
+    public void testCurrentFindAPIKeyCoordinatesEmptyLang() throws IOException, ParseException{
         Integer expectedCode = 200;
-        String params = "?bbox=12,32,15,37&callback=yEEEEEEEes&appid=" + Helpers.API_KEY;
+        Integer expectedCod = 200;
+        String params = "?lat=55&lon=37&lang=&appid=" + Helpers.API_KEY;
+        URL url = new URL(API_URL + params);
+        connection = (HttpURLConnection)url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.connect();
+        Integer code = connection.getResponseCode();
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
+        assertEquals("Wrong response code received",
+                code,
+                expectedCode);
+        assertTrue("No cod field is present",
+                ((JSONObject) responseBody).containsKey("cod"));
+        assertEquals("Wrong code in the JSON received.",
+                String.valueOf(((JSONObject) responseBody).get("cod")),
+                String.valueOf(expectedCod));
+        // TODO: write JSON validation
+    }
+
+    @Test
+    public void testCurrentFindAPIKeyCoordinatesLang() throws IOException, ParseException{
+        Integer expectedCode = 200;
+        Integer expectedCod = 200;
+        String params = "?lat=55&lon=37&lang=en&appid=" + Helpers.API_KEY;
+        URL url = new URL(API_URL + params);
+        connection = (HttpURLConnection)url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.connect();
+        Integer code = connection.getResponseCode();
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
+        assertEquals("Wrong response code received",
+                code,
+                expectedCode);
+        assertTrue("No cod field is present",
+                ((JSONObject) responseBody).containsKey("cod"));
+        assertEquals("Wrong code in the JSON received.",
+                String.valueOf(((JSONObject) responseBody).get("cod")),
+                String.valueOf(expectedCod));
+        // TODO: write JSON validation
+    }
+
+    @Test
+    public void testCurrentFindAPIKeyCoordinatesWrongCluster() throws IOException, ParseException{
+        Integer expectedCode = 200;
+        Integer expectedCod = 200;
+        String params = "?lat=55&lon=37&cluster=yEEEEEEEes&appid=" + Helpers.API_KEY;
+        URL url = new URL(API_URL + params);
+        connection = (HttpURLConnection)url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.connect();
+        Integer code = connection.getResponseCode();
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
+        assertEquals("Wrong response code received",
+                code,
+                expectedCode);
+        assertTrue("No cod field is present",
+                ((JSONObject) responseBody).containsKey("cod"));
+        assertEquals("Wrong code in the JSON received.",
+                String.valueOf(((JSONObject) responseBody).get("cod")),
+                String.valueOf(expectedCod));
+        // TODO: write JSON validation
+    }
+
+    @Test
+    public void testCurrentFindAPIKeyCoordinatesEmptyCluster() throws IOException, ParseException{
+        Integer expectedCode = 200;
+        Integer expectedCod = 200;
+        String params = "?lat=55&lon=37&cluster=&appid=" + Helpers.API_KEY;
+        URL url = new URL(API_URL + params);
+        connection = (HttpURLConnection)url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.connect();
+        Integer code = connection.getResponseCode();
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
+        assertEquals("Wrong response code received",
+                code,
+                expectedCode);
+        assertTrue("No cod field is present",
+                ((JSONObject) responseBody).containsKey("cod"));
+        assertEquals("Wrong code in the JSON received.",
+                String.valueOf(((JSONObject) responseBody).get("cod")),
+                String.valueOf(expectedCod));
+        // TODO: write JSON validation
+    }
+
+    @Test
+    public void testCurrentFindAPIKeyCoordinatesCluster() throws IOException, ParseException{
+        Integer expectedCode = 200;
+        Integer expectedCod = 200;
+        String params = "?lat=55&lon=37&cluster=yes&appid=" + Helpers.API_KEY;
+        URL url = new URL(API_URL + params);
+        connection = (HttpURLConnection)url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.connect();
+        Integer code = connection.getResponseCode();
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
+        assertEquals("Wrong response code received",
+                code,
+                expectedCode);
+        assertTrue("No cod field is present",
+                ((JSONObject) responseBody).containsKey("cod"));
+        assertEquals("Wrong code in the JSON received.",
+                String.valueOf(((JSONObject) responseBody).get("cod")),
+                String.valueOf(expectedCod));
+        // TODO: write JSON validation
+    }
+
+    @Test
+    public void testCurrentFindAPIKeyCoordinatesWrongCNT() throws IOException, ParseException{
+        Integer expectedCode = 200;
+        Integer expectedCod = 200;
+        String params = "?lat=55&lon=37&cnt=yEEEEEEEes&appid=" + Helpers.API_KEY;
+        URL url = new URL(API_URL + params);
+        connection = (HttpURLConnection)url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.connect();
+        Integer code = connection.getResponseCode();
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
+        assertEquals("Wrong response code received",
+                code,
+                expectedCode);
+        assertTrue("No cod field is present",
+                ((JSONObject) responseBody).containsKey("cod"));
+        assertEquals("Wrong code in the JSON received.",
+                String.valueOf(((JSONObject) responseBody).get("cod")),
+                String.valueOf(expectedCod));
+        // TODO: write JSON validation
+    }
+
+    @Test
+    public void testCurrentFindAPIKeyCoordinatesEmptyCNT() throws IOException, ParseException{
+        Integer expectedCode = 200;
+        Integer expectedCod = 200;
+        String params = "?lat=55&lon=37&cnt=&appid=" + Helpers.API_KEY;
+        URL url = new URL(API_URL + params);
+        connection = (HttpURLConnection)url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.connect();
+        Integer code = connection.getResponseCode();
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
+        assertEquals("Wrong response code received",
+                code,
+                expectedCode);
+        assertTrue("No cod field is present",
+                ((JSONObject) responseBody).containsKey("cod"));
+        assertEquals("Wrong code in the JSON received.",
+                String.valueOf(((JSONObject) responseBody).get("cod")),
+                String.valueOf(expectedCod));
+        // TODO: write JSON validation
+    }
+
+    @Test
+    public void testCurrentFindAPIKeyCoordinatesCNT() throws IOException, ParseException{
+        Integer expectedCode = 200;
+        Integer expectedCod = 200;
+        String params = "?lat=55&lon=37&cnt=3&appid=" + Helpers.API_KEY;
+        URL url = new URL(API_URL + params);
+        connection = (HttpURLConnection)url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.connect();
+        Integer code = connection.getResponseCode();
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
+        assertEquals("Wrong response code received",
+                code,
+                expectedCode);
+        assertTrue("No cod field is present",
+                ((JSONObject) responseBody).containsKey("cod"));
+        assertEquals("Wrong code in the JSON received.",
+                String.valueOf(((JSONObject) responseBody).get("cod")),
+                String.valueOf(expectedCod));
+        // TODO: write JSON validation
+    }
+
+    @Test
+    public void testCurrentFindAPIKeyCoordinatesWrongCallback() throws IOException, ParseException{
+        Integer expectedCode = 200;
+        String params = "?lat=55&lon=37&callback=yEEEEEEEes&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
@@ -430,5 +554,5 @@ public class TestCurrentBox {
         // TODO: write JSON validation
     }
 
-    public TestCurrentBox() throws IOException{}
+    public TestCurrentFind() throws IOException{}
 }
