@@ -54,9 +54,9 @@ public class TestCurrentGroup {
         assertEquals("Wrong response code received",
                 expectedCode,
                 code);
-        assertTrue("No cod field is present",
+        assertTrue("No cod field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("cod"));
-        assertTrue("No message field is present",
+        assertTrue("No message field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
                 String.valueOf(expectedCod),
@@ -82,9 +82,9 @@ public class TestCurrentGroup {
         assertEquals("Wrong response code received",
                 expectedCode,
                 code);
-        assertTrue("No cod field is present",
+        assertTrue("No cod field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("cod"));
-        assertTrue("No message field is present",
+        assertTrue("No message field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
                 String.valueOf(expectedCod),
@@ -110,9 +110,9 @@ public class TestCurrentGroup {
         assertEquals("Wrong response code received",
                 expectedCode,
                 code);
-        assertTrue("No cod field is present",
+        assertTrue("No cod field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("cod"));
-        assertTrue("No message field is present",
+        assertTrue("No message field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
                 String.valueOf(expectedCod),
@@ -138,9 +138,9 @@ public class TestCurrentGroup {
         assertEquals("Wrong response code received",
                 expectedCode,
                 code);
-        assertTrue("No cod field is present",
+        assertTrue("No cod field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("cod"));
-        assertTrue("No message field is present",
+        assertTrue("No message field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
                 String.valueOf(expectedCod),
@@ -166,9 +166,9 @@ public class TestCurrentGroup {
         assertEquals("Wrong response code received",
                 expectedCode,
                 code);
-        assertTrue("No cod field is present",
+        assertTrue("No cod field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("cod"));
-        assertTrue("No message field is present",
+        assertTrue("No message field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
                 String.valueOf(expectedCod),
@@ -194,9 +194,9 @@ public class TestCurrentGroup {
         assertEquals("Wrong response code received",
                 expectedCode,
                 code);
-        assertTrue("No cod field is present",
+        assertTrue("No cod field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("cod"));
-        assertTrue("No message field is present",
+        assertTrue("No message field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
                 String.valueOf(expectedCod),
@@ -222,9 +222,9 @@ public class TestCurrentGroup {
         assertEquals("Wrong response code received",
                 expectedCode,
                 code);
-        assertTrue("No cod field is present",
+        assertTrue("No cod field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("cod"));
-        assertTrue("No message field is present",
+        assertTrue("No message field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
                 String.valueOf(expectedCod),
@@ -248,7 +248,7 @@ public class TestCurrentGroup {
         assertEquals("Wrong response code received",
                 expectedCode,
                 code);
-        assertTrue("No cod field is present",
+        assertTrue("No cod field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
                 String.valueOf(expectedCod),
@@ -270,7 +270,7 @@ public class TestCurrentGroup {
         assertEquals("Wrong response code received",
                 expectedCode,
                 code);
-        assertTrue("No cod field is present",
+        assertTrue("No cod field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
                 String.valueOf(expectedCod),
@@ -292,7 +292,7 @@ public class TestCurrentGroup {
         assertEquals("Wrong response code received",
                 expectedCode,
                 code);
-        assertTrue("No cod field is present",
+        assertTrue("No cod field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
                 String.valueOf(expectedCod),
@@ -331,9 +331,9 @@ public class TestCurrentGroup {
         assertEquals("Wrong response code received",
                 expectedCode,
                 code);
-        assertTrue("No cod field is present",
+        assertTrue("No cod field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("cod"));
-        assertTrue("No message field is present",
+        assertTrue("No message field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
                 String.valueOf(expectedCod),
@@ -359,9 +359,9 @@ public class TestCurrentGroup {
         assertEquals("Wrong response code received",
                 expectedCode,
                 code);
-        assertTrue("No cod field is present",
+        assertTrue("No cod field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("cod"));
-        assertTrue("No message field is present",
+        assertTrue("No message field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
                 String.valueOf(expectedCod),
@@ -387,9 +387,9 @@ public class TestCurrentGroup {
         assertEquals("Wrong response code received",
                 expectedCode,
                 code);
-        assertTrue("No cod field is present",
+        assertTrue("No cod field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("cod"));
-        assertTrue("No message field is present",
+        assertTrue("No message field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
                 String.valueOf(expectedCod),
@@ -415,9 +415,9 @@ public class TestCurrentGroup {
         assertEquals("Wrong response code received",
                 expectedCode,
                 code);
-        assertTrue("No cod field is present",
+        assertTrue("No cod field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("cod"));
-        assertTrue("No message field is present",
+        assertTrue("No message field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
                 String.valueOf(expectedCod),
@@ -443,9 +443,9 @@ public class TestCurrentGroup {
         assertEquals("Wrong response code received",
                 expectedCode,
                 code);
-        assertTrue("No cod field is present",
+        assertTrue("No cod field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("cod"));
-        assertTrue("No message field is present",
+        assertTrue("No message field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
                 String.valueOf(expectedCod),
@@ -471,9 +471,9 @@ public class TestCurrentGroup {
         assertEquals("Wrong response code received",
                 expectedCode,
                 code);
-        assertTrue("No cod field is present",
+        assertTrue("No cod field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("cod"));
-        assertTrue("No message field is present",
+        assertTrue("No message field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("message"));
         assertEquals("Wrong code in the JSON received.",
                 String.valueOf(expectedCod),
@@ -497,7 +497,7 @@ public class TestCurrentGroup {
         assertEquals("Wrong response code received",
                 expectedCode,
                 code);
-        assertTrue("No cod field is present",
+        assertTrue("No cod field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
                 String.valueOf(expectedCod),
@@ -519,7 +519,7 @@ public class TestCurrentGroup {
         assertEquals("Wrong response code received",
                 expectedCode,
                 code);
-        assertTrue("No cod field is present",
+        assertTrue("No cod field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
                 String.valueOf(expectedCod),
@@ -541,7 +541,7 @@ public class TestCurrentGroup {
         assertEquals("Wrong response code received",
                 expectedCode,
                 code);
-        assertTrue("No cod field is present",
+        assertTrue("No cod field is present in the JSON received.",
                 ((JSONObject) responseBody).containsKey("cod"));
         assertEquals("Wrong code in the JSON received.",
                 String.valueOf(expectedCod),
