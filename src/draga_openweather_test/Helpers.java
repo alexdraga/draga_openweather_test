@@ -7,6 +7,7 @@ import java.net.HttpURLConnection;
 
 class Helpers {
     static String API_KEY = "8cddc759f83ccdcc0168d33767240c55";
+    static String API_URL = "http://api.openweathermap.org/data/2.5/";
 
     static String getResponseBody(HttpURLConnection con) throws IOException {
         int code = con.getResponseCode();

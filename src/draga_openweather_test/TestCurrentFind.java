@@ -1,21 +1,21 @@
 package draga_openweather_test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+import org.junit.After;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import org.json.simple.JSONObject;
-import org.junit.After;
-import org.junit.Test;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 
 public class TestCurrentFind {
-    private String API_URL = "http://api.openweathermap.org/data/2.5/find";
+    private String PATH = "find";
     private HttpURLConnection connection;
     private JSONParser parser = new JSONParser();
 
@@ -29,7 +29,7 @@ public class TestCurrentFind {
         Integer expectedCode = 414;
         String app_id = new String(new char[9000]).replace("\0", "a");
         String params = "?appid=" + app_id;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -45,7 +45,7 @@ public class TestCurrentFind {
         Integer expectedCod = 401;
         String expectedMessage =
                 "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.";
-        URL url = new URL(API_URL);
+        URL url = new URL(Helpers.API_URL + PATH);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -73,7 +73,7 @@ public class TestCurrentFind {
         String expectedMessage =
                 "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.";
         String params = "?yyyyyy=yyyy";
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -101,7 +101,7 @@ public class TestCurrentFind {
         String expectedMessage =
                 "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.";
         String params = "?appid=";
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -129,7 +129,7 @@ public class TestCurrentFind {
         String expectedMessage =
                 "bad request";
         String params = "?appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -156,7 +156,7 @@ public class TestCurrentFind {
         String expectedMessage =
                 "bad request";
         String params = "?lon=37&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -184,7 +184,7 @@ public class TestCurrentFind {
         String expectedMessage =
                 "bad request";
         String params = "?lat=&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -212,7 +212,7 @@ public class TestCurrentFind {
         String expectedMessage =
                 "bad request";
         String params = "?lat=55&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -240,7 +240,7 @@ public class TestCurrentFind {
         String expectedMessage =
                 "bad request";
         String params = "?lon=&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -268,7 +268,7 @@ public class TestCurrentFind {
         String expectedMessage =
                 "accurate";
         String params = "?lat=AAA&lon=37&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -297,7 +297,7 @@ public class TestCurrentFind {
         String expectedMessage =
                 "accurate";
         String params = "?lat=55&lon=AAAAA&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -324,7 +324,7 @@ public class TestCurrentFind {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "?lat=55&lon=37&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -346,7 +346,7 @@ public class TestCurrentFind {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "?lat=55&lon=37&lang=yEEEEEEEes&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -368,7 +368,7 @@ public class TestCurrentFind {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "?lat=55&lon=37&lang=&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -390,7 +390,7 @@ public class TestCurrentFind {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "?lat=55&lon=37&lang=en&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -412,7 +412,7 @@ public class TestCurrentFind {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "?lat=55&lon=37&cluster=yEEEEEEEes&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -434,7 +434,7 @@ public class TestCurrentFind {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "?lat=55&lon=37&cluster=&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -456,7 +456,7 @@ public class TestCurrentFind {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "?lat=55&lon=37&cluster=yes&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -478,7 +478,7 @@ public class TestCurrentFind {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "?lat=55&lon=37&cnt=yEEEEEEEes&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -500,7 +500,7 @@ public class TestCurrentFind {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "?lat=55&lon=37&cnt=&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -522,7 +522,7 @@ public class TestCurrentFind {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "?lat=55&lon=37&cnt=3&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -543,7 +543,7 @@ public class TestCurrentFind {
     public void testCurrentFindAPIKeyCoordinatesWrongCallback() throws IOException, ParseException{
         Integer expectedCode = 200;
         String params = "?lat=55&lon=37&callback=yEEEEEEEes&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -559,7 +559,7 @@ public class TestCurrentFind {
         Integer expectedCode = 414;
         String app_id = new String(new char[9000]).replace("\0", "a");
         String params = "/?appid=" + app_id;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -576,7 +576,7 @@ public class TestCurrentFind {
         String expectedMessage =
                 "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.";
         String params = "/?yyyyyy=yyyy";
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -604,7 +604,7 @@ public class TestCurrentFind {
         String expectedMessage =
                 "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.";
         String params = "/?appid=";
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -632,7 +632,7 @@ public class TestCurrentFind {
         String expectedMessage =
                 "bad request";
         String params = "/?appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -659,7 +659,7 @@ public class TestCurrentFind {
         String expectedMessage =
                 "bad request";
         String params = "/?lon=37&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -687,7 +687,7 @@ public class TestCurrentFind {
         String expectedMessage =
                 "bad request";
         String params = "/?lat=&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -715,7 +715,7 @@ public class TestCurrentFind {
         String expectedMessage =
                 "bad request";
         String params = "/?lat=55&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -743,7 +743,7 @@ public class TestCurrentFind {
         String expectedMessage =
                 "bad request";
         String params = "/?lon=&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -771,7 +771,7 @@ public class TestCurrentFind {
         String expectedMessage =
                 "accurate";
         String params = "/?lat=AAA&lon=37&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -800,7 +800,7 @@ public class TestCurrentFind {
         String expectedMessage =
                 "accurate";
         String params = "/?lat=55&lon=AAAAA&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -827,7 +827,7 @@ public class TestCurrentFind {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "/?lat=55&lon=37&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -849,7 +849,7 @@ public class TestCurrentFind {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "/?lat=55&lon=37&lang=yEEEEEEEes&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -871,7 +871,7 @@ public class TestCurrentFind {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "/?lat=55&lon=37&lang=&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -893,7 +893,7 @@ public class TestCurrentFind {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "/?lat=55&lon=37&lang=en&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -915,7 +915,7 @@ public class TestCurrentFind {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "/?lat=55&lon=37&cluster=yEEEEEEEes&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -937,7 +937,7 @@ public class TestCurrentFind {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "/?lat=55&lon=37&cluster=&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -959,7 +959,7 @@ public class TestCurrentFind {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "/?lat=55&lon=37&cluster=yes&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -981,7 +981,7 @@ public class TestCurrentFind {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "/?lat=55&lon=37&cnt=yEEEEEEEes&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -1003,7 +1003,7 @@ public class TestCurrentFind {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "/?lat=55&lon=37&cnt=&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -1025,7 +1025,7 @@ public class TestCurrentFind {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "/?lat=55&lon=37&cnt=3&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -1046,7 +1046,7 @@ public class TestCurrentFind {
     public void testCurrentFindAPIKeyCoordinatesWrongCallbackSlash() throws IOException, ParseException{
         Integer expectedCode = 200;
         String params = "/?lat=55&lon=37&callback=yEEEEEEEes&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();

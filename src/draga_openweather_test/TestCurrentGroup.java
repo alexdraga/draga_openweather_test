@@ -1,21 +1,21 @@
 package draga_openweather_test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+import org.junit.After;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import org.json.simple.JSONObject;
-import org.junit.After;
-import org.junit.Test;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 
 public class TestCurrentGroup {
-    private String API_URL = "http://api.openweathermap.org/data/2.5/group";
+    private String PATH = "group";
     private HttpURLConnection connection;
     private JSONParser parser = new JSONParser();
 
@@ -29,7 +29,7 @@ public class TestCurrentGroup {
         Integer expectedCode = 414;
         String app_id = new String(new char[9000]).replace("\0", "a");
         String params = "?appid=" + app_id;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -45,7 +45,7 @@ public class TestCurrentGroup {
         Integer expectedCod = 401;
         String expectedMessage =
                 "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.";
-        URL url = new URL(API_URL);
+        URL url = new URL(Helpers.API_URL + PATH);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -73,7 +73,7 @@ public class TestCurrentGroup {
         String expectedMessage =
                 "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.";
         String params = "?yyyyyy=yyyy";
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -101,7 +101,7 @@ public class TestCurrentGroup {
         String expectedMessage =
                 "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.";
         String params = "?appid=";
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -129,7 +129,7 @@ public class TestCurrentGroup {
         String expectedMessage =
                 "Error: Not found city";
         String params = "?appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -157,7 +157,7 @@ public class TestCurrentGroup {
         String expectedMessage =
                 "Error: Not found city";
         String params = "?id=&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -185,7 +185,7 @@ public class TestCurrentGroup {
         String expectedMessage =
                 "Error: Not found city";
         String params = "?id=JJJJJJJJJJJJ&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -213,7 +213,7 @@ public class TestCurrentGroup {
         String expectedMessage =
                 "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.";
         String params = "?id=2172797";
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -239,7 +239,7 @@ public class TestCurrentGroup {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "?id=2172797&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -261,7 +261,7 @@ public class TestCurrentGroup {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "?id=2172797,2172797&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -283,7 +283,7 @@ public class TestCurrentGroup {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "?id=2172797,2172796,2172795&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -305,7 +305,7 @@ public class TestCurrentGroup {
         Integer expectedCode = 414;
         String app_id = new String(new char[9000]).replace("\0", "a");
         String params = "/?appid=" + app_id;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -322,7 +322,7 @@ public class TestCurrentGroup {
         String expectedMessage =
                 "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.";
         String params = "/?yyyyyy=yyyy";
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -350,7 +350,7 @@ public class TestCurrentGroup {
         String expectedMessage =
                 "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.";
         String params = "/?appid=";
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -378,7 +378,7 @@ public class TestCurrentGroup {
         String expectedMessage =
                 "Error: Not found city";
         String params = "/?appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -406,7 +406,7 @@ public class TestCurrentGroup {
         String expectedMessage =
                 "Error: Not found city";
         String params = "/?id=&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -434,7 +434,7 @@ public class TestCurrentGroup {
         String expectedMessage =
                 "Error: Not found city";
         String params = "/?id=JJJJJJJJJJJJ&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -462,7 +462,7 @@ public class TestCurrentGroup {
         String expectedMessage =
                 "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info.";
         String params = "/?id=2172797";
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -488,7 +488,7 @@ public class TestCurrentGroup {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "/?id=2172797&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -510,7 +510,7 @@ public class TestCurrentGroup {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "/?id=2172797,2172797&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
@@ -532,7 +532,7 @@ public class TestCurrentGroup {
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "/?id=2172797,2172796,2172795&appid=" + Helpers.API_KEY;
-        URL url = new URL(API_URL + params);
+        URL url = new URL(Helpers.API_URL + PATH + params);
         connection = (HttpURLConnection)url.openConnection();
         connection.setRequestMethod("GET");
         connection.connect();
