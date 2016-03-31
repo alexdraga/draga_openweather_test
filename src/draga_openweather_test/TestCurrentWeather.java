@@ -25,7 +25,7 @@ public class TestCurrentWeather {
 	}
 
     @Test
-    public void testWeatherTooLongRequest() throws IOException, ParseException{
+    public void testCurrentWeatherTooLongRequest() throws IOException, ParseException{
         Integer expectedCode = 414;
         String app_id = new String(new char[9000]).replace("\0", "a");
         String params = "?appid=" + app_id;
@@ -40,7 +40,7 @@ public class TestCurrentWeather {
     }
 
 	@Test
-	public void testWeatherNoAPIKey() throws IOException, ParseException{
+	public void testCurrentWeatherNoAPIKey() throws IOException, ParseException{
         Integer expectedCode = 401;
         Integer expectedCod = 401;
         String expectedMessage =
@@ -67,7 +67,7 @@ public class TestCurrentWeather {
 	}
 
     @Test
-    public void testWeatherUnknownKey() throws IOException, ParseException{
+    public void testCurrentWeatherUnknownKey() throws IOException, ParseException{
         Integer expectedCode = 401;
         Integer expectedCod = 401;
         String expectedMessage =
@@ -95,7 +95,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherEmptyAPIKey() throws IOException, ParseException{
+    public void testCurrentWeatherEmptyAPIKey() throws IOException, ParseException{
         Integer expectedCode = 401;
         Integer expectedCod = 401;
         String expectedMessage =
@@ -123,7 +123,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-	public void testWeatherAPIKeyWithoutParams() throws IOException, ParseException{
+	public void testCurrentWeatherAPIKeyWithoutParams() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -151,7 +151,7 @@ public class TestCurrentWeather {
 	}
 
     @Test
-    public void testWeatherAPIKeyEmptyCity() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyEmptyCity() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -179,7 +179,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyUnknownCity() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyUnknownCity() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -207,7 +207,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherNoAPIKeyCity() throws IOException, ParseException{
+    public void testCurrentWeatherNoAPIKeyCity() throws IOException, ParseException{
         Integer expectedCode = 401;
         Integer expectedCod = 401;
         String expectedMessage =
@@ -235,7 +235,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyCity() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyCity() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "?q=London&appid=" + Helpers.API_KEY;
@@ -257,7 +257,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyCityUnknownLang() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyCityUnknownLang() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "?q=London,kkkk&appid=" + Helpers.API_KEY;
@@ -279,7 +279,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyEmptyCityLang() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyEmptyCityLang() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "?q=London,&appid=" + Helpers.API_KEY;
@@ -301,7 +301,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyCityLang() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyCityLang() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "?q=London,uk&appid=" + Helpers.API_KEY;
@@ -323,7 +323,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyUnknownCityID() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyUnknownCityID() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -351,7 +351,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyEmptyCityID() throws IOException, ParseException {
+    public void testCurrentWeatherAPIKeyEmptyCityID() throws IOException, ParseException {
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -379,7 +379,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyWrongCityID() throws IOException, ParseException {
+    public void testCurrentWeatherAPIKeyWrongCityID() throws IOException, ParseException {
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -407,7 +407,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherNoAPIKeyCityID() throws IOException, ParseException{
+    public void testCurrentWeatherNoAPIKeyCityID() throws IOException, ParseException{
         Integer expectedCode = 401;
         Integer expectedCod = 401;
         String expectedMessage =
@@ -435,7 +435,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyCityID() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyCityID() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "?id=2172797&appid=" + Helpers.API_KEY;
@@ -457,7 +457,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyEmptyCoordinates() throws IOException, ParseException {
+    public void testCurrentWeatherAPIKeyEmptyCoordinates() throws IOException, ParseException {
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -485,7 +485,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyNoLat() throws IOException, ParseException {
+    public void testCurrentWeatherAPIKeyNoLat() throws IOException, ParseException {
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -513,7 +513,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyNoLon() throws IOException, ParseException {
+    public void testCurrentWeatherAPIKeyNoLon() throws IOException, ParseException {
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -541,7 +541,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyWrongLon() throws IOException, ParseException {
+    public void testCurrentWeatherAPIKeyWrongLon() throws IOException, ParseException {
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -568,7 +568,7 @@ public class TestCurrentWeather {
                 expectedMessage);
     }
     @Test
-    public void testWeatherAPIKeyWrongLat() throws IOException, ParseException {
+    public void testCurrentWeatherAPIKeyWrongLat() throws IOException, ParseException {
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -596,7 +596,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherNoAPIKeyCoordinates() throws IOException, ParseException{
+    public void testCurrentWeatherNoAPIKeyCoordinates() throws IOException, ParseException{
         Integer expectedCode = 401;
         Integer expectedCod = 401;
         String expectedMessage =
@@ -624,7 +624,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyCoordinates() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyCoordinates() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "?lon=139&lat=35&appid=" + Helpers.API_KEY;
@@ -646,7 +646,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyUnknownZIPCode() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyUnknownZIPCode() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -674,7 +674,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyEmptyZIPCode() throws IOException, ParseException {
+    public void testCurrentWeatherAPIKeyEmptyZIPCode() throws IOException, ParseException {
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -702,7 +702,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyWrongZIPCode() throws IOException, ParseException {
+    public void testCurrentWeatherAPIKeyWrongZIPCode() throws IOException, ParseException {
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -730,7 +730,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherNoAPIKeyZIPCode() throws IOException, ParseException{
+    public void testCurrentWeatherNoAPIKeyZIPCode() throws IOException, ParseException{
         Integer expectedCode = 401;
         Integer expectedCod = 401;
         String expectedMessage =
@@ -758,7 +758,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyZIPCode() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyZIPCode() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String params = "?zip=94040,us&appid=" + Helpers.API_KEY;
@@ -780,7 +780,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherTooLongRequestSlash() throws IOException, ParseException{
+    public void testCurrentWeatherTooLongRequestSlash() throws IOException, ParseException{
         Integer expectedCode = 414;
         String app_id = new String(new char[9000]).replace("\0", "a");
         String params = "/?appid=" + app_id;
@@ -795,7 +795,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherUnknownKeySlash() throws IOException, ParseException{
+    public void testCurrentWeatherUnknownKeySlash() throws IOException, ParseException{
         Integer expectedCode = 401;
         Integer expectedCod = 401;
         String expectedMessage =
@@ -823,7 +823,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherEmptyAPIKeySlash() throws IOException, ParseException{
+    public void testCurrentWeatherEmptyAPIKeySlash() throws IOException, ParseException{
         Integer expectedCode = 401;
         Integer expectedCod = 401;
         String expectedMessage =
@@ -851,7 +851,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyWithoutParamsSlash() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyWithoutParamsSlash() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -879,7 +879,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyEmptyCitySlash() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyEmptyCitySlash() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -907,7 +907,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyUnknownCitySlash() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyUnknownCitySlash() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -935,7 +935,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherNoAPIKeyCitySlash() throws IOException, ParseException{
+    public void testCurrentWeatherNoAPIKeyCitySlash() throws IOException, ParseException{
         Integer expectedCode = 401;
         Integer expectedCod = 401;
         String expectedMessage =
@@ -963,7 +963,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyCitySlash() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyCitySlash() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "/?q=London&appid=" + Helpers.API_KEY;
@@ -985,7 +985,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyCityUnknownLangSlash() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyCityUnknownLangSlash() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "/?q=London,kkkk&appid=" + Helpers.API_KEY;
@@ -1007,7 +1007,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyEmptyCityLangSlash() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyEmptyCityLangSlash() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "/?q=London,&appid=" + Helpers.API_KEY;
@@ -1029,7 +1029,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyCityLangSlash() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyCityLangSlash() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "/?q=London,uk&appid=" + Helpers.API_KEY;
@@ -1051,7 +1051,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyUnknownCityIDSlash() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyUnknownCityIDSlash() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -1079,7 +1079,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyEmptyCityIDSlash() throws IOException, ParseException {
+    public void testCurrentWeatherAPIKeyEmptyCityIDSlash() throws IOException, ParseException {
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -1107,7 +1107,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyWrongCityIDSlash() throws IOException, ParseException {
+    public void testCurrentWeatherAPIKeyWrongCityIDSlash() throws IOException, ParseException {
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -1135,7 +1135,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherNoAPIKeyCityIDSlash() throws IOException, ParseException{
+    public void testCurrentWeatherNoAPIKeyCityIDSlash() throws IOException, ParseException{
         Integer expectedCode = 401;
         Integer expectedCod = 401;
         String expectedMessage =
@@ -1163,7 +1163,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyCityIDSlash() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyCityIDSlash() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "/?id=2172797&appid=" + Helpers.API_KEY;
@@ -1185,7 +1185,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyEmptyCoordinatesSlash() throws IOException, ParseException {
+    public void testCurrentWeatherAPIKeyEmptyCoordinatesSlash() throws IOException, ParseException {
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -1213,7 +1213,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyNoLatSlash() throws IOException, ParseException {
+    public void testCurrentWeatherAPIKeyNoLatSlash() throws IOException, ParseException {
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -1241,7 +1241,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyNoLonSlash() throws IOException, ParseException {
+    public void testCurrentWeatherAPIKeyNoLonSlash() throws IOException, ParseException {
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -1269,7 +1269,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyWrongLonSlash() throws IOException, ParseException {
+    public void testCurrentWeatherAPIKeyWrongLonSlash() throws IOException, ParseException {
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -1296,7 +1296,7 @@ public class TestCurrentWeather {
                 expectedMessage);
     }
     @Test
-    public void testWeatherAPIKeyWrongLatSlash() throws IOException, ParseException {
+    public void testCurrentWeatherAPIKeyWrongLatSlash() throws IOException, ParseException {
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -1324,7 +1324,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherNoAPIKeyCoordinatesSlash() throws IOException, ParseException{
+    public void testCurrentWeatherNoAPIKeyCoordinatesSlash() throws IOException, ParseException{
         Integer expectedCode = 401;
         Integer expectedCod = 401;
         String expectedMessage =
@@ -1352,7 +1352,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyCoordinatesSlash() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyCoordinatesSlash() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "/?lon=139&lat=35&appid=" + Helpers.API_KEY;
@@ -1374,7 +1374,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyUnknownZIPCodeSlash() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyUnknownZIPCodeSlash() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -1402,7 +1402,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyEmptyZIPCodeSlash() throws IOException, ParseException {
+    public void testCurrentWeatherAPIKeyEmptyZIPCodeSlash() throws IOException, ParseException {
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -1430,7 +1430,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyWrongZIPCodeSlash() throws IOException, ParseException {
+    public void testCurrentWeatherAPIKeyWrongZIPCodeSlash() throws IOException, ParseException {
         Integer expectedCode = 200;
         Integer expectedCod = 404;
         String expectedMessage =
@@ -1458,7 +1458,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherNoAPIKeyZIPCodeSlash() throws IOException, ParseException{
+    public void testCurrentWeatherNoAPIKeyZIPCodeSlash() throws IOException, ParseException{
         Integer expectedCode = 401;
         Integer expectedCod = 401;
         String expectedMessage =
@@ -1486,7 +1486,7 @@ public class TestCurrentWeather {
     }
 
     @Test
-    public void testWeatherAPIKeyZIPCodeSlash() throws IOException, ParseException{
+    public void testCurrentWeatherAPIKeyZIPCodeSlash() throws IOException, ParseException{
         Integer expectedCode = 200;
         Integer expectedCod = 200;
         String params = "/?zip=94040,us&appid=" + Helpers.API_KEY;
