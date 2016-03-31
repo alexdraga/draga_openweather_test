@@ -350,5 +350,65 @@ public class TestCurrentBox {
                 expectedMessage);
     }
 
+    @Test
+    public void testCurrentBoxAPIKeyBBoxWrongLang() throws IOException, ParseException{
+        Integer expectedCode = 200;
+        Integer expectedCod = 200;
+        String params = "?bbox=12,32,15,37&lang=yEEEEEEEes&appid=" + Helpers.API_KEY;
+        URL url = new URL(API_URL + params);
+        connection = (HttpURLConnection)url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.connect();
+        Integer code = connection.getResponseCode();
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
+        assertEquals("Wrong response code received",
+                code,
+                expectedCode);
+        assertTrue("No cod field is present",
+                ((JSONObject) responseBody).containsKey("cod"));
+        assertEquals("Wrong code in the JSON received.",
+                String.valueOf(((JSONObject) responseBody).get("cod")),
+                String.valueOf(expectedCod));
+        // TODO: write JSON validation
+    }
+
+    @Test
+    public void testCurrentBoxAPIKeyBBoxEmptyLang() throws IOException, ParseException{
+        Integer expectedCode = 200;
+        Integer expectedCod = 200;
+        String params = "?bbox=12,32,15,37&lang=&appid=" + Helpers.API_KEY;
+        URL url = new URL(API_URL + params);
+        connection = (HttpURLConnection)url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.connect();
+        Integer code = connection.getResponseCode();
+        Object responseBody = parser.parse(Helpers.getResponseBody(connection));
+        assertEquals("Wrong response code received",
+                code,
+                expectedCode);
+        assertTrue("No cod field is present",
+                ((JSONObject) responseBody).containsKey("cod"));
+        assertEquals("Wrong code in the JSON received.",
+                String.valueOf(((JSONObject) responseBody).get("cod")),
+                String.valueOf(expectedCod));
+        // TODO: write JSON validation
+    }
+
+    @Test
+    public void testCurrentBoxAPIKeyBBoxWrongCallback() throws IOException, ParseException{
+        Integer expectedCode = 200;
+        Integer expectedCod = 200;
+        String params = "?bbox=12,32,15,37&callback=yEEEEEEEes&appid=" + Helpers.API_KEY;
+        URL url = new URL(API_URL + params);
+        connection = (HttpURLConnection)url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.connect();
+        Integer code = connection.getResponseCode();
+        assertEquals("Wrong response code received",
+                code,
+                expectedCode);
+        // TODO: write JSON validation
+    }
+
     public TestCurrentBox() throws IOException{}
 }
