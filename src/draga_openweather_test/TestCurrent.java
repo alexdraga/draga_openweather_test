@@ -16,17 +16,17 @@ import org.json.simple.parser.ParseException;
 
 
 public class TestCurrent {
-	String API_KEY = "8cddc759f83ccdcc0168d33767240c55";
-	URL url = new URL("http://api.openweathermap.org/data/2.5/weather");
-	HttpURLConnection connection = (HttpURLConnection)url.openConnection();
-	JSONParser parser = new JSONParser();
+    private String API_KEY = "8cddc759f83ccdcc0168d33767240c55";
+    private URL url = new URL("http://api.openweathermap.org/data/2.5/weather");
+    private HttpURLConnection connection;
+    private JSONParser parser = new JSONParser();
 	
 	protected void tearDown(){
 		connection.disconnect();
 	}
 
 	private String getResponseBody(HttpURLConnection con) throws IOException {
-		int code = connection.getResponseCode();
+		int code = con.getResponseCode();
 		BufferedReader br;
 		if (code > 200 && code < 300) {
 			br = new BufferedReader(new InputStreamReader((con.getInputStream())));
@@ -43,6 +43,7 @@ public class TestCurrent {
 	   
 	@Test
 	public void testNoAPIKey() throws IOException, ParseException{
+        connection = (HttpURLConnection)url.openConnection();
 		connection.setRequestMethod("GET");
 		connection.connect();
         Integer code = connection.getResponseCode();
