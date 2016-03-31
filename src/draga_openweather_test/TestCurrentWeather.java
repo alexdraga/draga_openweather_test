@@ -760,7 +760,7 @@ public class TestCurrentWeather {
     @Test
     public void testWeatherAPIKeyZIPCode() throws IOException, ParseException{
         Integer expectedCode = 200;
-        Integer expectedCod = 200;
+        Integer expectedCod = 404;
         String params = "?zip=94040,us&appid=" + Helpers.API_KEY;
         URL url = new URL(API_URL + params);
         connection = (HttpURLConnection)url.openConnection();
